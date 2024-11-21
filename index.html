@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contenido/Style_Principal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"> <!-- Fuente Playfair Display -->
+    <title>Cantina Chichilo</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Cantina Chichilo</h1>
+            <p>Buenos Aires</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Sobre nosotros.html">Sobre nosotros</a></li>
+            <li><a href="Menu.html">Menú</a></li>
+            <li><a href="Contactanos.html">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <section id="carrusel">
+        <div class="contenido/carrusel-container">
+            <img src="contenido/pr1.webp" alt="Imagen 1" class="carrusel-img">
+            <img src="contenido/pr2.jpg" alt="Imagen 2" class="carrusel-img">
+            <img src="contenido/pr3.webp" alt="Imagen 3" class="carrusel-img">
+            <img src="contenido/pr4.jpg" alt="Imagen 4" class="carrusel-img">
+        </div>
+        <div class="leyenda">
+            <h2>"Nosotros somos los originales, los demás nos imitan"</h2>
+        </div>
+    </section>
+
+    <script>
+        let index = 0;
+        const slides = document.querySelectorAll('.carrusel-img');
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = '0'; 
+            });
+            index = (index + 1) % totalSlides; 
+            slides[index].style.opacity = '1'; 
+        }
+
+        slides[0].style.opacity = '1';
+        setInterval(showNextSlide, 4000); 
+    </script>
+
+</body>
+</html>
